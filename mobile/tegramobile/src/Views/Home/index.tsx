@@ -1,38 +1,53 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {usePokemon} from '../../hooks/pokemon';
-import {View, Image, Text} from 'react-native';
+import {View, Image, Text, TouchableOpacity} from 'react-native';
 import {style} from './styles';
+import Skeleton from '../../components/skeleton';
 
 function Home() {
-  const {listPokemon, isLoading, generation} = usePokemon();
-
+  const {listPokemon, isLoading, generation, setGeneration} = usePokemon();
   return (
-    <>
-      <View>
+    <View style={{padding: 16}}>
+      <View style={style.sectionTitle}>
         {[...Array(9)].map((_, i) => (
-          <View
-            // to={`/?generation=${i + 1}`}
+          <TouchableOpacity
+            style={{
+              borderBottomColor: generation === i + 1 ? '#54b752' : '',
+              borderBottomWidth: generation === i + 1 ? 2 : 0,
+            }}
+            onPress={() => setGeneration(i + 1)}
             key={i + 1}>
             <Text>Geração {i + 1}</Text>
-          </View>
+          </TouchableOpacity>
         ))}
       </View>
-      <View>
+      <View style={style.sectionPokemon}>
         {isLoading
           ? [...Array(20)].map((_, i) => (
-              <View key={i} style={style.boxPokemon} />
+              <Skeleton
+                width={160}
+                height={128}
+                key={i}
+                style={style.boxPokemon}
+              />
             ))
           : listPokemon?.map(v => (
               <View style={style.boxPokemon} key={v.id}>
-                <Text>
+                <Text style={{color: '#000000'}}>
                   {v.id} - {v.name}
                 </Text>
-                <Image alt={v.name} source={{uri: v.img}} />
-                <Text>{v.types.toString()}</Text>
+                <Image
+                  alt={v.name}
+                  source={{uri: v.img}}
+                  width={68}
+                  style={{aspectRatio: 1}}
+                />
+                <Text style={{color: '#000000'}}>{v.types.toString()}</Text>
               </View>
             ))}
       </View>
-    </>
+    </View>
   );
 }
 

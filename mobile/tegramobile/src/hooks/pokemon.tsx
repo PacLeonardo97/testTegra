@@ -1,13 +1,10 @@
 import {useEffect, useState} from 'react';
-import {useLocation} from 'react-router-dom';
 import apiPokemon from '../service/pokemon';
-import {IParams, IListPokemon} from '../types/pokemon';
+import type {IParams, IListPokemon, IStoragePokemon} from '../types/pokemon';
+import {getStorage, setStorage} from '../helper/storage';
 
 export function usePokemon() {
-  const location = useLocation();
-  const generation =
-    Number(new URLSearchParams(location.search).get('generation')) || 1;
-
+  const [generation, setGeneration] = useState(1);
   const [listPokemon, setListPokemon] = useState([] as IListPokemon[]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -26,9 +23,16 @@ export function usePokemon() {
           8: {offset: 809, limit: 96},
           9: {offset: 905, limit: 105},
         }[generation] as IParams;
-        setIsLoading(true);
+        const storagePokemon = await getStorage<IStoragePokemon>('pokemon');
+        if (storagePokemon?.generation !== generation) {
+          setIsLoading(true);
+        } else {
+          setListPokemon(storagePokemon.list);
+          return;
+        }
         setError(false);
         const req = await apiPokemon.getAllPokemon(params);
+        await setStorage('pokemon', JSON.stringify({generation, list: req}));
         setListPokemon(req as any);
       } catch (_) {
         setError(true);
@@ -43,5 +47,6 @@ export function usePokemon() {
     isLoading,
     error,
     generation,
+    setGeneration,
   };
 }

@@ -22,3 +22,8 @@ export type IParams = {
   offset: number;
   limit: number;
 };
+
+export interface IStoragePokemon {
+  generation: number;
+  list: IListPokemon[];
+}
