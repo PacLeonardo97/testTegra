@@ -25,7 +25,6 @@ export default class UsersController {
       const user = await User.create(payload)
       response.json(user)
     } catch (error) {
-      console.log('error ->', error)
       response.badRequest(error.messages)
     }
   }

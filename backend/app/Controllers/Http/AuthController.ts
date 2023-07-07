@@ -15,12 +15,10 @@ export default class AuthController {
                 expiresIn: '30 mins'
             })
         } catch (e) {
-            console.log('e ->', e)
             return response.unauthorized('Invalid credentials');
         }
     }
     public async logout({ auth }: HttpContextContract) {
-        console.log('blabla', auth.use('api').isAuthenticated)
         await auth.use('api').revoke()
         return {
             revoked: true

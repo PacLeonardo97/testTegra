@@ -15,7 +15,5 @@ export default class CreateUserValidator {
     ]),
   })
 
-  public messages: CustomMessages = {
-    required: '{{ field }} é obrigatório',
-  }
+  public messages: CustomMessages = {}
 }
