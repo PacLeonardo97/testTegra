@@ -5,7 +5,7 @@ import ListPokemon from 'App/Models/ListPokemon';
 export default class extends BaseSeeder {
   count = 0;
 
-  private async create(limit: number) {
+  private async create(generation: number) {
     this.count++;
     const params = {
       1: { limit: 151 },
@@ -17,7 +17,7 @@ export default class extends BaseSeeder {
       7: { offset: 721, limit: 88 },
       8: { offset: 809, limit: 96 },
       9: { offset: 905, limit: 105 },
-    }[limit];
+    }[generation] as any;
     const req = await axios.get(`https://pokeapi.co/api/v2/pokemon?${new URLSearchParams(params).toString()}`);
     console.log('gen', this.count, 'ready')
     return await Promise.all(req.data.results.map(async ({ name, url }) => {
@@ -47,7 +47,17 @@ export default class extends BaseSeeder {
       const gen8 = await this.create(8);
       const gen9 = await this.create(9);
 
-      const data = [...gen1, ...gen2, ...gen3, ...gen4, ...gen5, ...gen6, ...gen7, ...gen8, ...gen9,];
+      const data = [
+        ...gen1.map(v => ({ ...v, generation: '1' })), 
+        ...gen2.map(v => ({ ...v, generation: '2' })), 
+        ...gen3.map(v => ({ ...v, generation: '3' })), 
+        ...gen4.map(v => ({ ...v, generation: '4' })), 
+        ...gen5.map(v => ({ ...v, generation: '5' })), 
+        ...gen6.map(v => ({ ...v, generation: '6' })), 
+        ...gen7.map(v => ({ ...v, generation: '7' })), 
+        ...gen8.map(v => ({ ...v, generation: '8' })), 
+        ...gen9.map(v => ({ ...v, generation: '9' })),
+      ];
 
       await ListPokemon.createMany(data);
     } catch (error) {

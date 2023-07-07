@@ -15,4 +15,7 @@ export default class ListPokemon extends BaseModel {
   
   @column()
   url: string;
+
+  @column()
+  generation: string;
 }

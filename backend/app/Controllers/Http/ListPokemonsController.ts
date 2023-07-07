@@ -5,13 +5,16 @@ import ListPokemonModel from "App/Models/ListPokemon";
 export default class ListPokemonsController {
     public async index({ request }: HttpContextContract) {
         const param = request.all();
-        if (!param.offset || !param.limit) {
+        if (!param.generation) {
             const listPokemon = await Database.from('list_pokemon').orderBy('id', 'asc');
             return {
                 data: listPokemon
             }
         }
-        return await Database.from('list_pokemon').orderBy('id', 'asc').paginate(1, 152)
+        return await Database.from('list_pokemon')
+            .select('id', 'name', 'types', 'img', 'url')
+            .where('generation', param.generation)
+            .orderBy('id', 'asc');
     }
     public async show({ response, request }: HttpContextContract) {
         const param = request.all();
