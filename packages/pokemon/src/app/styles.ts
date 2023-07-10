@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Link from 'next/link'
 
 interface ILink {
-  ispage: boolean;
+  $ispage: boolean;
 }
 
 export const Container = styled.section`
@@ -49,5 +49,5 @@ export const LinkGeneration = styled(Link)<ILink>`
   &:hover {
     border-bottom: 2px solid #54b752;
   }
-  border-bottom: ${(props) => (props.ispage ? "2px solid #54b752" : "")};
+  border-bottom: ${(props) => (props.$ispage ? "2px solid #54b752" : "")};
 `;

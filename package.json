@@ -12,7 +12,8 @@
   "workspaces": {
     "packages": [
       "packages/*"
-    ]
+    ],
+    "nohoist": ["**/@adonisjs", "**/@adonisjs/**"]
   },
   "devDependencies": {
     "@pokemon/eslint-config": "*",

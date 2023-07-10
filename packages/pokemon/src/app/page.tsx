@@ -10,7 +10,7 @@ function Home() {
     <>
       <ContainerLink>
         {[...Array(9)].map((_, i) => (
-          <LinkGeneration ispage={i + 1 === generation} href={`/?generation=${i + 1}`} key={i + 1}>
+          <LinkGeneration $ispage={i + 1 === generation} href={`/?generation=${i + 1}`} key={i + 1}>
             Geração {i + 1}
           </LinkGeneration>
         ))}

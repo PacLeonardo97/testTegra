@@ -1,7 +1,7 @@
 import type { CorsConfig } from '@ioc:Adonis/Core/Cors'
 
 const corsConfig: CorsConfig = {
-  origin: true,
+  origin: '*',
   methods: ['GET', 'HEAD', 'POST', 'PUT', 'DELETE'],
   headers: true,
   exposeHeaders: [
@@ -14,6 +14,7 @@ const corsConfig: CorsConfig = {
   ],
   credentials: true,
   maxAge: 90,
+
   enabled: request => request.url().startsWith('/api')
 }
 

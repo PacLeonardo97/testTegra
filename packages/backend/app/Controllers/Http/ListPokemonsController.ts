@@ -5,6 +5,7 @@ import ListPokemonModel from "App/Models/ListPokemon";
 export default class ListPokemonsController {
     public async index({ request }: HttpContextContract) {
         const param = request.all();
+        console.log('backend ListPokemonsController')
         if (!param.generation) {
             const listPokemon = await Database.from('list_pokemon').orderBy('id', 'asc');
             return {

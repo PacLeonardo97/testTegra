@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 
-import { pokeApi,  } from '@pokemon/service'
-import type { IParams, IListPokemon } from '@pokemon/service'
+import { myApi } from '@pokemon/service'
+import type { IListPokemon } from '@pokemon/service'
 
 export function usePokemon() {
   const searchParams = useSearchParams()
@@ -15,20 +15,9 @@ export function usePokemon() {
   useEffect(() => {
     (async () => {
       try {
-        const params = {
-          1: { limit: 151 },
-          2: { offset: 151, limit: 100 },
-          3: { offset: 251, limit: 135 },
-          4: { offset: 386, limit: 107 },
-          5: { offset: 493, limit: 156 },
-          6: { offset: 649, limit: 72 },
-          7: { offset: 721, limit: 88 },
-          8: { offset: 809, limit: 96 },
-          9: { offset: 905, limit: 105 }
-        }[generation] as IParams
         setIsLoading(true)
         setError(false)
-        const req = await pokeApi.getAllPokemon(params)
+        const req = await myApi.getAllPokemon(generation)
         setListPokemon(req as any)
       } catch (error) {
         setError(true)
