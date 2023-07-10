@@ -1,0 +1,7 @@
+{
+    "shared": {
+        "emailUsed" : "email já cadastrado",
+        "userNotFound": "Usuário não encontrado",
+        "strongPassword": "{field} precisa ter uma letra maiúscula, uma letra minúscula e um caracter especial"
+    }
+}

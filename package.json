@@ -1,0 +1,23 @@
+{
+  "name": "pokemon",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "format": "turbo run format"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "devDependencies": {
+    "@pokemon/eslint-config": "*",
+    "turbo": "^1.10.7",
+    "turborepo": "^0.0.1",
+    "typescript": "^5.1.6"
+  }
+}
