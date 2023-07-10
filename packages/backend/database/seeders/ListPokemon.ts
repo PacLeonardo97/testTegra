@@ -15,7 +15,6 @@ export default class extends BaseSeeder {
   public async run() {
     try {
       const gen1 = await this.create(1);
-      console.log('gen1', gen1)
       const gen2 = await this.create(2);
       const gen3 = await this.create(3);
       const gen4 = await this.create(4);
@@ -36,7 +35,7 @@ export default class extends BaseSeeder {
         ...gen8.map(v => ({ ...v, generation: '8' })),
         ...gen9.map(v => ({ ...v, generation: '9' })),
       ] as unknown as ListPokemon[];
-
+      
       await ListPokemon.createMany(data);
     } catch (error) {
       console.log('error ->', error)

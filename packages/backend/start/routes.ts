@@ -6,4 +6,6 @@ Route.group(() => {
   Route.resource('/user', 'usersController').except(['create', 'edit']);
   Route.post('/login', 'AuthController.login');
   Route.post('/logout', 'AuthController.logout').middleware('auth');
+  Route.get('/mydex', 'MyDexesController.index').middleware('auth');
+
 }).prefix('/api')

@@ -11,6 +11,7 @@
   "compilerOptions": {
     "outDir": "build",
     "rootDir": "./",
+    "baseUrl": "./",
     "sourceMap": true,
     "resolveJsonModule": true,
     "paths": {

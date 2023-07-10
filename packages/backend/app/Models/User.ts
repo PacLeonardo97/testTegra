@@ -2,11 +2,15 @@ import {
   BaseModel,
   beforeSave,
   column,
+  manyToMany,
+  ManyToMany
 } from '@ioc:Adonis/Lucid/Orm'
 
 import { DateTime } from 'luxon'
+import MyDexList from './MyDex';
 import Hash from '@ioc:Adonis/Core/Hash'
 import { v4 as uuidv4 } from 'uuid';
+import ListPokemon from './ListPokemon';
 
 export default class User extends BaseModel {
   @column({ isPrimary: true })
@@ -29,6 +33,15 @@ export default class User extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
+
+  @manyToMany(() => ListPokemon, {
+    localKey: 'id',
+    relatedKey: 'id',
+    pivotForeignKey: 'user_id',
+    pivotRelatedForeignKey: 'pokemon_id',
+    pivotTable: 'my_dex_lists',
+  })
+  public myDexList: ManyToMany<typeof ListPokemon>
 
   @beforeSave()
   public static async hashPassword (user: User) {
