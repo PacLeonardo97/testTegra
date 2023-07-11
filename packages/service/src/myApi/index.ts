@@ -1,13 +1,13 @@
 import axios from "axios";
 import type { IApiListPokemons } from '../pokeapi/types';
 
-const api = axios.create({
+const apiInstance = axios.create({
     baseURL: "http://localhost:3333/api/",
 });
 
 class ApiPokemon {
     async getAllPokemon(generation?: number) {
-        const req = await api.get<IApiListPokemons>("listPokemon", {
+        const req = await apiInstance.get<IApiListPokemons>("listPokemon", {
             params: {
                 generation
             }
@@ -20,5 +20,6 @@ class ApiPokemon {
 const pokeApi = new ApiPokemon()
 
 export {
-    pokeApi
+    pokeApi,
+    apiInstance,
 };

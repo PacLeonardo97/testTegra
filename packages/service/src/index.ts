@@ -1,6 +1,6 @@
 import type { IApiListPokemons, IPokemon, IParams, IListPokemon } from "./pokeapi/types";
 import { pokeApi } from './pokeapi'
-import { pokeApi as myApi } from './myApi';
+import { pokeApi as myApi, apiInstance } from './myApi';
 
 export { 
   pokeApi,
@@ -11,5 +11,6 @@ export type {
   IApiListPokemons,
   IPokemon,
   IParams,
-  IListPokemon
+  IListPokemon,
+  apiInstance,
 }

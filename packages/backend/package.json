@@ -16,7 +16,8 @@
   "eslintConfig": {
     "extends": [
       "plugin:adonis/typescriptApp",
-      "prettier"
+      "prettier",
+      "@pokemon/eslint-config"
     ],
     "plugins": [
       "prettier"
@@ -41,12 +42,13 @@
     "printWidth": 100
   },
   "dependencies": {
-    "@pokemon/service": "*",
     "@adonisjs/auth": "^8.2.3",
     "@adonisjs/core": "^5.8.0",
     "@adonisjs/i18n": "^1.5.6",
     "@adonisjs/lucid": "^18.4.0",
     "@adonisjs/repl": "^3.1.0",
+    "@pokemon/service": "*",
+    "adonis-rabbit": "^0.2.0",
     "luxon": "^3.3.0",
     "pg": "^8.11.1",
     "phc-bcrypt": "^1.0.8",
@@ -61,6 +63,7 @@
     "@adonisjs/assembler": "^5.9.5",
     "@japa/preset-adonis": "^1.2.0",
     "@japa/runner": "^2.5.1",
+    "@pokemon/eslint-config": "*",
     "@types/proxy-addr": "^2.0.0",
     "@types/source-map-support": "^0.5.6",
     "@types/uuid": "^9.0.2",

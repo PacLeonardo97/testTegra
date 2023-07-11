@@ -9,17 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.15",
     "@pokemon/service": "*",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
+    "bufferutil": "^4.0.7",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "next": "13.4.9",
     "postcss": "8.4.25",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.10.1",
+    "socket.io-client": "^4.7.1",
     "styled-components": "^6.0.3",
-    "tailwindcss": "3.3.2"
+    "tailwindcss": "3.3.2",
+    "utf-8-validate": "^6.0.3"
   },
   "devDependencies": {
     "@pokemon/eslint-config": "*",

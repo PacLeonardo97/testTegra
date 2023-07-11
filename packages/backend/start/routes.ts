@@ -7,5 +7,5 @@ Route.group(() => {
   Route.post('/login', 'AuthController.login');
   Route.post('/logout', 'AuthController.logout').middleware('auth');
   Route.get('/mydex', 'MyDexesController.index').middleware('auth');
-
+  Route.post('/mydex', 'MyDexesController.store').middleware('auth')
 }).prefix('/api')

@@ -12,7 +12,7 @@ export default class AuthController {
                 throw new Error('Invalid credentials')
             }
             return await auth.use('api').generate(user, {
-                expiresIn: '30 mins'
+                expiresIn: '160 mins'
             })
         } catch (e) {
             return response.unauthorized('Invalid credentials');
