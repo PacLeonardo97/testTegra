@@ -15,7 +15,7 @@ class ApiPokemon {
 
         return req.data;
     }
-    async login(data: {email:string, password: string}) {
+    async login(data: { email: string, password: string }) {
         const req = await apiInstance.post("login", data);
         return req.data
     }

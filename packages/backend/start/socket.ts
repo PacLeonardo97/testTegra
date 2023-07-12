@@ -12,7 +12,7 @@ Ws.io.on('connection', async (socket: ISocket) => {
   socket.on('addPokemon', async (data, auth: User) => {
     console.log('data ->', data)
     console.log('auth. ->', auth)
-    socket.emit('addPokemon', new Uint8Array(data))
+    socket.emit('addPokemon', data)
     // await Rabbit.sendToQueue('my_queue', data)
   })
 })

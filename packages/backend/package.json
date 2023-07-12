@@ -42,13 +42,13 @@
     "printWidth": 100
   },
   "dependencies": {
+    "@pokemon/service": "*",
     "@adonisjs/auth": "^8.2.3",
     "@adonisjs/core": "^5.8.0",
     "@adonisjs/i18n": "^1.5.6",
     "@adonisjs/lucid": "^18.4.0",
     "@adonisjs/redis": "^7.3.2",
     "@adonisjs/repl": "^3.1.0",
-    "@pokemon/service": "*",
     "adonis-rabbit": "^0.2.0",
     "luxon": "^3.3.0",
     "pg": "^8.11.1",

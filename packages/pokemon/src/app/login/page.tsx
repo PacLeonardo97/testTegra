@@ -1,6 +1,5 @@
 'use client'
 import { useForm } from 'react-hook-form'
-import type { FieldValues } from 'react-hook-form'
 import schema from '@/validation/login'
 import { myApi } from '@pokemon/service'
 import { setCookie } from "cookies-next";
