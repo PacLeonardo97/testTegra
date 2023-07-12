@@ -41,9 +41,21 @@ services:
       - "5672:5672"
       - "15672:15672"
 
+  redis:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '${REDIS_PORT}:${REDIS_PORT}'
+    command: redis-server --save 20 1 --loglevel warning
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    volumes: 
+      - redis:/data
+
 volumes:
   postgres:
   pgadmin:
+  redis:
 
 networks:
   postgres:

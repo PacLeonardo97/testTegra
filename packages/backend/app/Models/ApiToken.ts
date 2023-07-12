@@ -19,13 +19,13 @@ export default class ApiToken extends BaseModel {
   token: string;
 
   @belongsTo(() => User, {
-    foreignKey: 'userId',
+    foreignKey: 'userId'
   })
   public user: BelongsTo<typeof User>
 
-  @column.dateTime({ autoCreate: true })
-  public createdAt: DateTime;
+  @column.dateTime()
+  public ex: DateTime;
 
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
-  public updatedAt: DateTime;
+  @column.dateTime()
+  public expires_at: DateTime;
 }

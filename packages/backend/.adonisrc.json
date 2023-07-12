@@ -29,7 +29,8 @@
     "@adonisjs/lucid",
     "@adonisjs/auth",
     "@adonisjs/i18n",
-    "adonis-rabbit"
+    "adonis-rabbit",
+    "@adonisjs/redis"
   ],
   "aceProviders": [
     "@adonisjs/repl"

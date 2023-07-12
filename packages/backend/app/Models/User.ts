@@ -7,7 +7,6 @@ import {
 } from '@ioc:Adonis/Lucid/Orm'
 
 import { DateTime } from 'luxon'
-import MyDexList from './MyDex';
 import Hash from '@ioc:Adonis/Core/Hash'
 import { v4 as uuidv4 } from 'uuid';
 import ListPokemon from './ListPokemon';
