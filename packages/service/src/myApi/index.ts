@@ -2,7 +2,7 @@ import axios from "axios";
 import type { IApiListPokemons } from '../pokeapi/types';
 
 const apiInstance = axios.create({
-    baseURL: "http://localhost:3333/api/",
+    baseURL: process.env.NEXT_PUBLIC_API,
 });
 
 class ApiPokemon {
