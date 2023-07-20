@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@pokemon/service": "*",
     "@headlessui/react": "^1.7.15",
     "@hookform/resolvers": "^3.1.1",
-    "@pokemon/service": "*",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
     "bufferutil": "^4.0.7",
