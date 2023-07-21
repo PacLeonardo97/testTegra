@@ -23,7 +23,7 @@ function Home() {
 
   return (
     <>
-      <ContainerLink>
+      {/* <ContainerLink>
         {[...Array(9)].map((_, i) => (
           <LinkGeneration
             $ispage={i + 1 === generation}
@@ -33,7 +33,7 @@ function Home() {
             Geração {i + 1}
           </LinkGeneration>
         ))}
-      </ContainerLink>
+      </ContainerLink> */}
       <Container>
         {isLoading
           ? [...Array(20)].map((_, i) => (
