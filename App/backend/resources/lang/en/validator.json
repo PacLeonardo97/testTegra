@@ -1,7 +1,7 @@
 {
-    "shared": {
-        "emailUsed" : "E-mail already registered",
-        "userNotFound": "User not found",
-        "strongPassword": "{field} must have an uppercase letter, a lowercase letter and a special character"
-    }
+  "shared": {
+    "emailUsed": "E-mail already registered",
+    "userNotFound": "User not found",
+    "strongPassword": "{field} must have an uppercase letter, a lowercase letter and a special character"
+  }
 }

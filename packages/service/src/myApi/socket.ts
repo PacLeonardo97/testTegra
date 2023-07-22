@@ -1,3 +1,3 @@
 export enum EEventsSocket {
-    closeReason = 'closeReason'
+  closeReason = 'closeReason'
 }

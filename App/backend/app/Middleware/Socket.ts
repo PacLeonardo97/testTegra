@@ -7,8 +7,8 @@ import crypto from 'crypto';
 import type { Socket } from 'socket.io';
 
 interface IParsedRedis {
-    user: BelongsTo<typeof User>;
-    expires_at: string;
+  user: BelongsTo<typeof User>;
+  expires_at: string;
 }
 
 class SocketMiddleware {
@@ -75,8 +75,7 @@ class SocketMiddleware {
   private async checkToken(token: string) {
     try {
       const parsedToken = this.parseToken(token);
-      const apiToken = await ApiToken
-        .query()
+      const apiToken = await ApiToken.query()
         .select('userId', 'expires_at')
         .where('id', parsedToken.tokenId)
         .andWhere('token', parsedToken.token)
@@ -87,9 +86,11 @@ class SocketMiddleware {
         throw new Error('Invalid Token');
       }
 
-      if (new Date(apiToken.expires_at.toISO() as string).getTime() < new Date().getTime()) {
-        await ApiToken
-          .query()
+      if (
+        new Date(apiToken.expires_at.toISO() as string).getTime() <
+        new Date().getTime()
+      ) {
+        await ApiToken.query()
           .select('userId', 'expires_at')
           .where('id', parsedToken.tokenId)
           .delete();

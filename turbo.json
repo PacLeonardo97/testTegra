@@ -6,6 +6,9 @@
     },
     "lint": {
       "cache": false
+    },
+    "prettier": {
+      "cache": false
     }
   }
 }

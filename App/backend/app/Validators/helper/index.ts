@@ -1,9 +1,11 @@
 function factoryError<T>(error: T) {
   if (typeof error === 'string') {
     return {
-      errors: [{
-        message: error
-      }]
+      errors: [
+        {
+          message: error
+        }
+      ]
     };
   }
   if (Array.isArray(error)) {
@@ -12,9 +14,7 @@ function factoryError<T>(error: T) {
     };
   }
   return {
-    errors: [
-      error
-    ]
+    errors: [error]
   };
 }
 

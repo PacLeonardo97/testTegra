@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div<{ $sidebar: boolean }>`
-
   & .page__left {
     margin-left: ${props => (props.$sidebar ? '300px' : '0')};
     transition: margin-left 150ms;
@@ -14,7 +13,7 @@ export const Container = styled.div<{ $sidebar: boolean }>`
 export const ContainerTop = styled.div`
   height: 100px;
   display: flex;
-  background-color: #1A202C; 
+  background-color: #1a202c;
   box-shadow: 0 0 20px 3px;
   > svg {
     position: fixed;

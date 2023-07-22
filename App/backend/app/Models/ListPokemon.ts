@@ -5,17 +5,17 @@ export default class ListPokemon extends BaseModel {
   public id: number;
 
   @column()
-    name: string;
+  name: string;
 
   @column()
-    types: string[];
+  types: string[];
 
   @column()
-    img: string;
+  img: string;
 
   @column()
-    url: string;
+  url: string;
 
   @column()
-    generation: string;
+  generation: string;
 }

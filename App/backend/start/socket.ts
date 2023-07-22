@@ -5,7 +5,7 @@ import Ws from 'App/Services/Ws';
 
 Ws.boot();
 
-Ws.io.on('connection', async (socket) => {
+Ws.io.on('connection', async socket => {
   await SocketMiddleware.middleWare(socket);
 
   socket.on('addPokemon', async (data, auth: User) => {

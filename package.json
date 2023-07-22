@@ -8,6 +8,7 @@
     "start:vercel": "yarn --cwd App/frontend start",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
+    "prettier": "turbo run prettier",
     "format": "turbo run format"
   },
   "workspaces": {

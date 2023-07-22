@@ -4,7 +4,7 @@ export default class extends BaseSchema {
   protected tableName = 'list_pokemon';
 
   public async up() {
-    this.schema.createTable(this.tableName, (table) => {
+    this.schema.createTable(this.tableName, table => {
       table.increments('id').index().notNullable();
       table.string('name').index().notNullable();
       table.string('generation').index().notNullable();

@@ -4,11 +4,11 @@ import { EColorTypePokemon } from '@/enum';
 import styled from 'styled-components';
 
 interface ILink {
-  $ispage: boolean
+  $ispage: boolean;
 }
 
 interface ICardPokemon {
-  $type: string
+  $type: string;
 }
 
 export const Container = styled.section`

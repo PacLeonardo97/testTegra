@@ -18,6 +18,6 @@ declare module '@ioc:Adonis/Core/Env' {
   |
   */
 
-  type CustomTypes = typeof import('../env').default
-  type EnvTypes = CustomTypes
+  type CustomTypes = typeof import('../env').default;
+  type EnvTypes = CustomTypes;
 }

@@ -10,5 +10,5 @@ import { InferConnectionsFromConfig } from '@adonisjs/redis/build/config';
 import redisConfig from '../config/redis';
 
 declare module '@ioc:Adonis/Addons/Redis' {
-  type RedisConnectionsList = InferConnectionsFromConfig<typeof redisConfig>
+  type RedisConnectionsList = InferConnectionsFromConfig<typeof redisConfig>;
 }

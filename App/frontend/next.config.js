@@ -2,8 +2,8 @@
 const nextConfig = {
   transpilePackages: ['@pokemon/service'],
   compiler: {
-    styledComponents: true,
-  },
-}
+    styledComponents: true
+  }
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

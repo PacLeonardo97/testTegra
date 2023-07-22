@@ -1,4 +1,10 @@
-import { BaseModel, column, belongsTo, BelongsTo, beforeSave } from '@ioc:Adonis/Lucid/Orm';
+import {
+  BaseModel,
+  column,
+  belongsTo,
+  BelongsTo,
+  beforeSave
+} from '@ioc:Adonis/Lucid/Orm';
 import ListPokemon from 'App/Models/ListPokemon';
 import User from 'App/Models/User';
 import { DateTime } from 'luxon';
@@ -19,10 +25,10 @@ export default class MyDexList extends BaseModel {
   public listPokemon: BelongsTo<typeof ListPokemon>;
 
   @column()
-    user_id: string;
+  user_id: string;
 
   @column()
-    pokemon_id: string;
+  pokemon_id: string;
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime;

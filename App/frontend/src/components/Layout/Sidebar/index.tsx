@@ -13,8 +13,8 @@ import {
 } from './styles';
 
 export interface IProps {
-  sidebar: boolean
-  setSidebar: Dispatch<SetStateAction<boolean>>
+  sidebar: boolean;
+  setSidebar: Dispatch<SetStateAction<boolean>>;
 }
 
 const Sidebar = ({ setSidebar, sidebar }: IProps) => {
@@ -41,8 +41,8 @@ const Sidebar = ({ setSidebar, sidebar }: IProps) => {
                 {item.subNav && subnav
                   ? item.iconOpened
                   : item.subNav
-                    ? item.iconClosed
-                    : null}
+                  ? item.iconClosed
+                  : null}
               </div>
             </SidebarLink>
             {subnav &&

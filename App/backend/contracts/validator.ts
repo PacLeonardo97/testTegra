@@ -1,5 +1,5 @@
 declare module '@ioc:Adonis/Core/Validator' {
-    interface Rules {
-        strongPassword(): Rule;
-    }
+  interface Rules {
+    strongPassword(): Rule;
+  }
 }

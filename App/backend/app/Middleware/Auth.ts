@@ -3,7 +3,10 @@ import type { GuardsList } from '@ioc:Adonis/Addons/Auth';
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
 
 export default class AuthMiddleware {
-  protected async authenticate(auth: HttpContextContract['auth'], guards: (keyof GuardsList)[]) {
+  protected async authenticate(
+    auth: HttpContextContract['auth'],
+    guards: (keyof GuardsList)[]
+  ) {
     let guardLastAttempted: string | undefined;
 
     for (const guard of guards) {

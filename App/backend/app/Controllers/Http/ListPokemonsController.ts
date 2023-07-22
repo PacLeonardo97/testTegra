@@ -6,14 +6,16 @@ export default class ListPokemonsController {
   public async index({ request }: HttpContextContract) {
     const param = request.all();
     if (!param.generation) {
-      const listPokemon = await Database.from('list_pokemon').orderBy('id', 'asc');
+      const listPokemon = await Database.from('list_pokemon').orderBy(
+        'id',
+        'asc'
+      );
       return {
         data: listPokemon
       };
     }
 
-    return await ListPokemonModel
-      .query()
+    return await ListPokemonModel.query()
       .select('id', 'name', 'types', 'img', 'url')
       .where('generation', param.generation)
       .orderBy('id', 'asc');
@@ -28,7 +30,9 @@ export default class ListPokemonsController {
       };
     }
     if (param?.name) {
-      const pokemon = await Database.from('list_pokemon').whereLike('name', `%${param.name}%`).orderBy('id', 'asc');
+      const pokemon = await Database.from('list_pokemon')
+        .whereLike('name', `%${param.name}%`)
+        .orderBy('id', 'asc');
       return {
         data: pokemon
       };

@@ -11,7 +11,9 @@ export const Container = styled.div<{ $sidebar: boolean }>`
   width: ${props => (props.$sidebar ? '300px' : '0')};
   visibility: ${props => (props.$sidebar ? 'visible' : 'hidden')};
   opacity: ${props => (props.$sidebar ? '1' : '0')};
-  transition: visibility 0s linear 0s, opacity 300ms;
+  transition:
+    visibility 0s linear 0s,
+    opacity 300ms;
   @media (max-width: 800px) {
     width: ${props => (props.$sidebar ? '100%' : '0')};
   }
@@ -55,7 +57,7 @@ export const Content = styled.div`
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #3B4F78;
+    background: #3b4f78;
     border-radius: 8px;
   }
 

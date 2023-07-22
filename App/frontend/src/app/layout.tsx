@@ -22,9 +22,7 @@ export default function RootLayout({ children }: IProps) {
       <body className={inter.className}>
         <StyledComponentsRegistry>
           <SocketProvider>
-            <Layout>
-              {children}
-              </Layout>
+            <Layout>{children}</Layout>
           </SocketProvider>
         </StyledComponentsRegistry>
       </body>

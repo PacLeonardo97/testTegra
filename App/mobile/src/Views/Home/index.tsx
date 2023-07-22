@@ -46,7 +46,7 @@ function Home() {
                 />
                 <Text style={{ color: '#000000' }}>{v.types.toString()}</Text>
               </View>
-          ))}
+            ))}
       </View>
     </View>
   );

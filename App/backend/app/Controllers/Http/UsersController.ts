@@ -20,7 +20,9 @@ export default class UsersController {
       const payload = await request.validate(CreateUserValidator);
       const userExist = await User.findBy('email', payload.email);
       if (userExist) {
-        return response.badRequest(factoryError(i18n.formatMessage('validator.shared.emailUsed')));
+        return response.badRequest(
+          factoryError(i18n.formatMessage('validator.shared.emailUsed'))
+        );
       }
       const user = await User.create(payload);
       response.json(user);
@@ -46,7 +48,9 @@ export default class UsersController {
       const payload = await request.validate(CreateUserValidator);
 
       if (!user) {
-        return response.badRequest(factoryError(i18n.formatMessage('validator.shared.userNotFound')));
+        return response.badRequest(
+          factoryError(i18n.formatMessage('validator.shared.userNotFound'))
+        );
       }
 
       user.merge(payload);
@@ -61,7 +65,9 @@ export default class UsersController {
     try {
       const user = await User.find(request.param('id'));
       if (!user) {
-        return response.badRequest(factoryError(i18n.formatMessage('validator.shared.userNotFound')));
+        return response.badRequest(
+          factoryError(i18n.formatMessage('validator.shared.userNotFound'))
+        );
       }
       await user.delete();
       response.json({

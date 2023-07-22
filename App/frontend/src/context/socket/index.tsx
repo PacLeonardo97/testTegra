@@ -7,14 +7,16 @@ import { getCookie, deleteCookie } from 'cookies-next';
 import { io, Socket } from 'socket.io-client';
 
 interface IProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 interface ISocketContext {
-  socketClient: Socket | undefined
+  socketClient: Socket | undefined;
 }
 
-export const SocketContext = createContext<ISocketContext>({} as ISocketContext);
+export const SocketContext = createContext<ISocketContext>(
+  {} as ISocketContext
+);
 
 export const useSocket = () => useContext(SocketContext);
 
