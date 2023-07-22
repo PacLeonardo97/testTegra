@@ -1,11 +1,11 @@
-import { FaChartBar, FaHome } from 'react-icons/fa'
-import * as FaIcons from 'react-icons/fa'
-import * as AiIcons from 'react-icons/ai'
-import * as IoIcons from 'react-icons/io'
-import * as RiIcons from 'react-icons/ri'
+import * as AiIcons from 'react-icons/ai';
+import { FaChartBar, FaHome } from 'react-icons/fa';
+import * as FaIcons from 'react-icons/fa';
+import * as IoIcons from 'react-icons/io';
+import * as RiIcons from 'react-icons/ri';
 
-const iconClosed = <RiIcons.RiArrowDownSFill />
-const iconOpened = <RiIcons.RiArrowUpSFill />
+const iconClosed = <RiIcons.RiArrowDownSFill />;
+const iconOpened = <RiIcons.RiArrowUpSFill />;
 
 export const routes = [
   {
@@ -16,7 +16,7 @@ export const routes = [
     iconClosed,
     iconOpened,
     subNav: [...Array(9)].map((_, i) => ({
-      title: `Geração ${i+1}`,
+      title: `Geração ${i + 1}`,
       path: `/?generation=${i + 1}`,
       icon: <IoIcons.IoIosPaper />
     }))
@@ -27,7 +27,7 @@ export const routes = [
     path: '/login',
     icon: <FaChartBar />
   }
-]
+];
 
 export const SidebarData = [
   {
@@ -113,4 +113,4 @@ export const SidebarData = [
     path: '/support',
     icon: <IoIcons.IoMdHelpCircle />
   }
-]
+];

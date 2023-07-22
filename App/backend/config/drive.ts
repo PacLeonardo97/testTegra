@@ -5,9 +5,9 @@
  * file.
  */
 
-import Env from '@ioc:Adonis/Core/Env'
-import { driveConfig } from '@adonisjs/core/build/config'
-import Application from '@ioc:Adonis/Core/Application'
+import { driveConfig } from '@adonisjs/core/build/config';
+import Application from '@ioc:Adonis/Core/Application';
+import Env from '@ioc:Adonis/Core/Env';
 
 /*
 |--------------------------------------------------------------------------
@@ -77,8 +77,8 @@ export default driveConfig({
       | you are not registering routes with this prefix.
       |
       */
-      basePath: '/uploads',
-    },
+      basePath: '/uploads'
+    }
 
     /*
     |--------------------------------------------------------------------------
@@ -145,5 +145,5 @@ export default driveConfig({
       */
     //   usingUniformAcl: false,
     // },
-  },
-})
+  }
+});

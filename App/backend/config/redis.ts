@@ -1,5 +1,5 @@
-import Env from '@ioc:Adonis/Core/Env'
-import { redisConfig } from '@adonisjs/redis/build/config'
+import { redisConfig } from '@adonisjs/redis/build/config';
+import Env from '@ioc:Adonis/Core/Env';
 
 export default redisConfig({
   connection: Env.get('REDIS_CONNECTION'),
@@ -9,7 +9,7 @@ export default redisConfig({
       port: Env.get('REDIS_PORT'),
       password: Env.get('REDIS_PASSWORD', ''),
       db: 0,
-      keyPrefix: '',
-    },
-  },
-})
+      keyPrefix: ''
+    }
+  }
+});

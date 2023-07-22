@@ -15,31 +15,12 @@
   },
   "eslintConfig": {
     "extends": [
-      "plugin:adonis/typescriptApp",
-      "prettier",
       "@pokemon/eslint-config"
     ],
-    "plugins": [
-      "prettier"
-    ],
     "rules": {
-      "prettier/prettier": [
-        "error"
-      ]
+      "camelcase": "off",
+      "no-useless-constructor": "off"
     }
-  },
-  "eslintIgnore": [
-    "build"
-  ],
-  "prettier": {
-    "trailingComma": "es5",
-    "semi": false,
-    "singleQuote": true,
-    "useTabs": false,
-    "quoteProps": "consistent",
-    "bracketSpacing": true,
-    "arrowParens": "always",
-    "printWidth": 100
   },
   "dependencies": {
     "@pokemon/service": "*",

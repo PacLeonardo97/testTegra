@@ -1,5 +1,6 @@
-import styled from 'styled-components'
-import Link from 'next/link'
+import Link from 'next/link';
+
+import styled from 'styled-components';
 
 export const Container = styled.div<{ $sidebar: boolean }>`
   background-color: #171923;
@@ -36,7 +37,7 @@ export const Container = styled.div<{ $sidebar: boolean }>`
       width: 300px;
     }
   }
-`
+`;
 
 export const Content = styled.div`
   margin-top: 80px;
@@ -62,7 +63,7 @@ export const Content = styled.div`
   &::-webkit-scrollbar-thumb:hover {
     background: #b30000;
   }
-`
+`;
 
 export const SidebarLink = styled(Link)`
   display: flex;
@@ -84,11 +85,11 @@ export const SidebarLink = styled(Link)`
     display: flex;
     align-items: center;
   }
-`
+`;
 
 export const SidebarLabel = styled.span`
   margin-left: 16px;
-`
+`;
 
 export const DropdownLink = styled(Link)`
   background: #414757;
@@ -106,4 +107,4 @@ export const DropdownLink = styled(Link)`
     background: #632ce4;
     cursor: pointer;
   }
-`
+`;

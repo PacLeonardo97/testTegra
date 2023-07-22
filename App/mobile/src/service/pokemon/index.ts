@@ -1,14 +1,15 @@
-import type {IApiListPokemons, IPokemon, IParams} from '../../types/pokemon';
 import axios from 'axios';
 
+import type { IApiListPokemons, IPokemon, IParams } from '../../types/pokemon';
+
 const api = axios.create({
-  baseURL: 'https://pokeapi.co/api/v2/',
+  baseURL: 'https://pokeapi.co/api/v2/'
 });
 
 class ApiPokemon {
   async getAllPokemon(params: IParams) {
-    const req = await api.get<IApiListPokemons>('pokemon', {params});
-    const result = req.data.results.map(async ({name, url}) => {
+    const req = await api.get<IApiListPokemons>('pokemon', { params });
+    const result = req.data.results.map(async ({ name, url }) => {
       const id = `${url
         .replace('https://pokeapi.co/api/v2/pokemon/', '')
         .replace(/\D/g, '')}`;
@@ -17,7 +18,7 @@ class ApiPokemon {
         name,
         id,
         types: req.data.types.map(v => v.type.name),
-        img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
+        img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
       };
     });
     return Promise.all(result);

@@ -1,4 +1,4 @@
-import Route from '@ioc:Adonis/Core/Route'
+import Route from '@ioc:Adonis/Core/Route';
 
 Route.group(() => {
   Route.get('/listPokemon', 'ListPokemonsController.index');
@@ -7,5 +7,5 @@ Route.group(() => {
   Route.post('/login', 'AuthController.login');
   Route.post('/logout', 'AuthController.logout').middleware('auth');
   Route.get('/mydex', 'MyDexesController.index').middleware('auth');
-  Route.post('/mydex', 'MyDexesController.store').middleware('auth')
-}).prefix('/api')
+  Route.post('/mydex', 'MyDexesController.store').middleware('auth');
+}).prefix('/api');

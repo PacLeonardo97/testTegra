@@ -1,17 +1,18 @@
-import BaseSeeder from '@ioc:Adonis/Lucid/Seeder'
-import ListPokemon from 'App/Models/ListPokemon';
+import BaseSeeder from '@ioc:Adonis/Lucid/Seeder';
 import { pokeApi } from '@pokemon/service';
+import ListPokemon from 'App/Models/ListPokemon';
 
 export default class extends BaseSeeder {
   count = 0;
 
   private async create(generation: number) {
     this.count++;
-    const params = await pokeApi.params(String(generation))
-    const req = await pokeApi.getAllPokemon(params)
-    console.log('gen', this.count, 'ready')
-    return req as unknown as ListPokemon[]
+    const params = await pokeApi.params(String(generation));
+    const req = await pokeApi.getAllPokemon(params);
+    console.log('gen', this.count, 'ready');
+    return req as unknown as ListPokemon[];
   }
+
   public async run() {
     try {
       const gen1 = await this.create(1);
@@ -33,12 +34,12 @@ export default class extends BaseSeeder {
         ...gen6.map(v => ({ ...v, generation: '6' })),
         ...gen7.map(v => ({ ...v, generation: '7' })),
         ...gen8.map(v => ({ ...v, generation: '8' })),
-        ...gen9.map(v => ({ ...v, generation: '9' })),
+        ...gen9.map(v => ({ ...v, generation: '9' }))
       ] as unknown as ListPokemon[];
-      
+
       await ListPokemon.createMany(data);
     } catch (error) {
-      console.log('error ->', error)
+      console.log('error ->', error);
     }
   }
 }

@@ -1,15 +1,16 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {SafeAreaView, ScrollView, StatusBar} from 'react-native';
+import { SafeAreaView, ScrollView, StatusBar } from 'react-native';
+
 import Home from './src/Views/Home';
 
 function App() {
   return (
-    <SafeAreaView style={{backgroundColor: '#c0c0c0'}}>
+    <SafeAreaView style={{ backgroundColor: '#c0c0c0' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#c0c0c0" />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={{backgroundColor: '#c0c0c0'}}>
+        style={{ backgroundColor: '#c0c0c0' }}
+      >
         <Home />
       </ScrollView>
     </SafeAreaView>

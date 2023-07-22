@@ -1,3 +1,3 @@
-const eslintConfig = require('@omnirepo/eslint-config')
+const eslintConfig = require('@pokemon/eslint-config')
 
 module.exports = eslintConfig

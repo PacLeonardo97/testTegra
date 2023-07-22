@@ -1,5 +1,5 @@
-import Application from '@ioc:Adonis/Core/Application'
-import type { I18nConfig } from '@ioc:Adonis/Addons/I18n'
+import type { I18nConfig } from '@ioc:Adonis/Addons/I18n';
+import Application from '@ioc:Adonis/Core/Application';
 
 const i18nConfig: I18nConfig = {
   translationsFormat: 'icu',
@@ -11,9 +11,9 @@ const i18nConfig: I18nConfig = {
   loaders: {
     fs: {
       enabled: true,
-      location: Application.resourcesPath('lang'),
-    },
-  },
-}
+      location: Application.resourcesPath('lang')
+    }
+  }
+};
 
-export default i18nConfig
+export default i18nConfig;

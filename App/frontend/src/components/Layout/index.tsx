@@ -1,15 +1,16 @@
-'use client'
-import { useState } from 'react'
-import { Container, ContainerTop } from './styles'
-import Sidebar from './Sidebar'
-import { FaBars } from 'react-icons/fa'
+'use client';
+import { useState } from 'react';
+import { FaBars } from 'react-icons/fa';
+
+import Sidebar from './Sidebar';
+import { Container, ContainerTop } from './styles';
 
 interface IProps {
   children: React.ReactNode
 }
 
 function Layout({ children }: IProps) {
-  const [sidebar, setSidebar] = useState(false)
+  const [sidebar, setSidebar] = useState(false);
   return (
     <>
       <ContainerTop>
@@ -20,7 +21,7 @@ function Layout({ children }: IProps) {
         <section className="page__left">{children}</section>
       </Container>
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

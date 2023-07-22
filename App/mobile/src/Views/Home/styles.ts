@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export const style = StyleSheet.create({
   boxPokemon: {
@@ -7,20 +7,20 @@ export const style = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     borderRadius: 5,
     alignItems: 'center',
-    padding: 8,
+    padding: 8
   },
   sectionTitle: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
     gap: 16,
-    marginTop: 16,
+    marginTop: 16
   },
   sectionPokemon: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
     gap: 16,
-    marginTop: 32,
-  },
+    marginTop: 32
+  }
 });

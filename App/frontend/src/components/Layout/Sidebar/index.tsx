@@ -1,8 +1,16 @@
-import { useState, Fragment } from 'react'
-import type { Dispatch, SetStateAction } from 'react'
-import { Container, Content, SidebarLink, SidebarLabel, DropdownLink } from './styles'
-import { FaTimes } from 'react-icons/fa'
-import { routes } from '@/helper/routes'
+import { useState, Fragment } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { FaTimes } from 'react-icons/fa';
+
+import { routes } from '@/helper/routes';
+
+import {
+  Container,
+  Content,
+  SidebarLink,
+  SidebarLabel,
+  DropdownLink
+} from './styles';
 
 export interface IProps {
   sidebar: boolean
@@ -10,13 +18,13 @@ export interface IProps {
 }
 
 const Sidebar = ({ setSidebar, sidebar }: IProps) => {
-  const [subnav, setSubnav] = useState(false)
+  const [subnav, setSubnav] = useState(false);
 
-  const showSubnav = () => setSubnav(!subnav)
+  const showSubnav = () => setSubnav(!subnav);
 
   const closeSidebar = () => {
-    setSidebar(false)
-  }
+    setSidebar(false);
+  };
 
   return (
     <Container $sidebar={sidebar}>
@@ -33,8 +41,8 @@ const Sidebar = ({ setSidebar, sidebar }: IProps) => {
                 {item.subNav && subnav
                   ? item.iconOpened
                   : item.subNav
-                  ? item.iconClosed
-                  : null}
+                    ? item.iconClosed
+                    : null}
               </div>
             </SidebarLink>
             {subnav &&
@@ -44,13 +52,13 @@ const Sidebar = ({ setSidebar, sidebar }: IProps) => {
                     {item.icon}
                     <SidebarLabel>{item.title}</SidebarLabel>
                   </DropdownLink>
-                )
+                );
               })}
           </Fragment>
         ))}
       </Content>
     </Container>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

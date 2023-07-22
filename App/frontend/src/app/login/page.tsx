@@ -1,21 +1,21 @@
-'use client'
-import { useForm } from 'react-hook-form'
-import schema from '@/validation/login'
-import { myApi } from '@pokemon/service'
-import { setCookie } from "cookies-next";
+'use client';
+import { useForm } from 'react-hook-form';
+
+import schema from '@/validation/login';
+import { myApi } from '@pokemon/service';
+import { setCookie } from 'cookies-next';
 
 function Login() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm({ resolver: schema })
-  
+    formState: { errors }
+  } = useForm({ resolver: schema });
 
   const onSubmit = async (data: Parameters<typeof myApi.login>[0]) => {
     const req = await myApi.login(data);
     setCookie('token', req.token);
-  }
+  };
 
   return (
     <div
@@ -56,7 +56,7 @@ function Login() {
                   type="password"
                   id="password"
                   placeholder="Digite a sua senha"
-                  arial-label="password"
+                  aria-label="password"
                 />
                 {errors.password?.message && <p>{errors.password?.message}</p>}
               </div>
@@ -85,7 +85,7 @@ function Login() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;

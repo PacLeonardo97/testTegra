@@ -1,21 +1,21 @@
 function factoryError<T>(error: T) {
-    if (typeof error === 'string') {
-        return {
-            errors: [{ 
-                message: error 
-            }]
-        }
-    }
-    if (Array.isArray(error)) {
-        return { 
-            errors: error
-        }
-    }
+  if (typeof error === 'string') {
     return {
-        errors: [
-            error
-        ]
-    }
+      errors: [{
+        message: error
+      }]
+    };
+  }
+  if (Array.isArray(error)) {
+    return {
+      errors: error
+    };
+  }
+  return {
+    errors: [
+      error
+    ]
+  };
 }
 
-export default factoryError
+export default factoryError;

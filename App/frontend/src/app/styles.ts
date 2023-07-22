@@ -1,13 +1,14 @@
-import styled from "styled-components";
-import Link from 'next/link'
-import { EColorTypePokemon } from "@/enum";
+import Link from 'next/link';
+
+import { EColorTypePokemon } from '@/enum';
+import styled from 'styled-components';
 
 interface ILink {
-  $ispage: boolean;
+  $ispage: boolean
 }
 
 interface ICardPokemon {
-  $type: string;
+  $type: string
 }
 
 export const Container = styled.section`
@@ -31,7 +32,7 @@ export const ContainerLink = styled.header`
   width: 1024px;
   margin: 32px auto;
   justify-content: space-between;
-  
+
   @media (max-width: 768px) {
     width: 100%;
     flex-wrap: wrap;
@@ -51,7 +52,7 @@ export const ContainerPokemon = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   & p {
     height: 56px;
     display: -webkit-box;
@@ -66,7 +67,7 @@ export const LinkGeneration = styled(Link)<ILink>`
   &:hover {
     border-bottom: 2px solid #54b752;
   }
-  border-bottom: ${(props) => (props.$ispage ? "2px solid #54b752" : "")};
+  border-bottom: ${props => (props.$ispage ? '2px solid #54b752' : '')};
 `;
 
 export const CardTypePokemon = styled.div<ICardPokemon>`
@@ -74,5 +75,6 @@ export const CardTypePokemon = styled.div<ICardPokemon>`
   border-radius: 4px;
   text-align: center;
   width: 96px;
-  background: ${props => EColorTypePokemon[props.$type as keyof typeof EColorTypePokemon]}
-`
+  background: ${props =>
+    EColorTypePokemon[props.$type as keyof typeof EColorTypePokemon]};
+`;

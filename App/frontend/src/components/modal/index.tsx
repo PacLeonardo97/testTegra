@@ -1,6 +1,7 @@
-import type { ReactNode } from 'react'
-import { Fragment } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
+import type { ReactNode } from 'react';
+import { Fragment } from 'react';
+
+import { Dialog, Transition } from '@headlessui/react';
 
 interface IProps {
   closeModal: () => void
@@ -39,7 +40,7 @@ function Modal({ closeModal, children, modal }: IProps) {
           </Transition.Child>
         </Dialog>
       </Transition>
-  )
+  );
 }
 
-export default Modal
+export default Modal;

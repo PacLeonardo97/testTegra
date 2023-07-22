@@ -1,4 +1,4 @@
-import type { CorsConfig } from '@ioc:Adonis/Core/Cors'
+import type { CorsConfig } from '@ioc:Adonis/Core/Cors';
 
 const corsConfig: CorsConfig = {
   origin: '*',
@@ -10,12 +10,12 @@ const corsConfig: CorsConfig = {
     'content-type',
     'expires',
     'last-modified',
-    'pragma',
+    'pragma'
   ],
   credentials: true,
   maxAge: 90,
 
   enabled: request => request.url().startsWith('/api')
-}
+};
 
-export default corsConfig
+export default corsConfig;

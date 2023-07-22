@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.div<{ $sidebar: boolean }>`
 
@@ -9,7 +9,7 @@ export const Container = styled.div<{ $sidebar: boolean }>`
       margin-left: 0;
     }
   }
-`
+`;
 
 export const ContainerTop = styled.div`
   height: 100px;

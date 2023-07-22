@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type { ReactNode } from 'react';
 
 interface IProps {
   message: string;
@@ -13,6 +13,6 @@ function Tooltip({ message, children }: IProps) {
         {message}
       </span>
     </div>
-  )
+  );
 }
-export default Tooltip
+export default Tooltip;

@@ -1,7 +1,6 @@
-/* eslint-disable react-native/no-inline-styles */
-import React, {memo, useEffect} from 'react';
-import {Animated} from 'react-native';
-import type {StyleProp, ViewStyle} from 'react-native';
+import React, { memo, useEffect } from 'react';
+import { Animated } from 'react-native';
+import type { StyleProp, ViewStyle } from 'react-native';
 
 interface IProps {
   height: number;
@@ -9,7 +8,7 @@ interface IProps {
   style?: StyleProp<ViewStyle>;
 }
 
-const Skeleton = ({height, width, style}: IProps) => {
+const Skeleton = ({ height, width, style }: IProps) => {
   const opacity = React.useRef(new Animated.Value(0.2));
 
   useEffect(() => {
@@ -18,14 +17,14 @@ const Skeleton = ({height, width, style}: IProps) => {
         Animated.timing(opacity.current, {
           toValue: 0.4,
           useNativeDriver: true,
-          duration: 700,
+          duration: 700
         }),
         Animated.timing(opacity.current, {
           toValue: 0.2,
           useNativeDriver: true,
-          duration: 800,
-        }),
-      ]),
+          duration: 800
+        })
+      ])
     ).start();
   }, []);
 
@@ -37,8 +36,8 @@ const Skeleton = ({height, width, style}: IProps) => {
           opacity: opacity.current,
           height,
           width,
-          backgroundColor: '#666666',
-        },
+          backgroundColor: '#666666'
+        }
       ]}
     />
   );

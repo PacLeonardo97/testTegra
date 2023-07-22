@@ -1,21 +1,21 @@
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm';
 
 export default class ListPokemon extends BaseModel {
   @column({ isPrimary: true })
-  public id: number
+  public id: number;
 
   @column()
-  name: string;
-  
-  @column()
-  types: string[];
-  
-  @column()
-  img: string;
-  
-  @column()
-  url: string;
+    name: string;
 
   @column()
-  generation: string;
+    types: string[];
+
+  @column()
+    img: string;
+
+  @column()
+    url: string;
+
+  @column()
+    generation: string;
 }

@@ -1,4 +1,4 @@
-import type { AuthConfig } from '@ioc:Adonis/Addons/Auth'
+import type { AuthConfig } from '@ioc:Adonis/Addons/Auth';
 
 const authConfig: AuthConfig = {
   guard: 'api',
@@ -9,17 +9,17 @@ const authConfig: AuthConfig = {
         type: 'api',
         driver: 'database',
         table: 'api_tokens',
-        foreignKey: 'user_id',
+        foreignKey: 'user_id'
       },
 
       provider: {
         driver: 'lucid',
         identifierKey: 'id',
         uids: ['email'],
-        model: () => import('App/Models/User'),
-      },
-    },
-  },
-}
+        model: () => import('App/Models/User')
+      }
+    }
+  }
+};
 
-export default authConfig
+export default authConfig;
